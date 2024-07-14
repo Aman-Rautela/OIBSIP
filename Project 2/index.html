@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aman - FrontDev Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: rgb(221, 217, 217);
+        color: black;
+        font-family: Helvetica, sans-serif;
+        height: 100%;
+      }
+      main{
+        flex: 1;
+      }
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        height: 80px;
+        background: rgb(0, 0, 0);
+      }
+      nav ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      nav ul li {
+        list-style: none;
+        margin: 10px 15px;
+      }
+      nav ul li a {
+        text-decoration: none;
+        color: white;
+      }
+      nav ul li a:hover {
+        font-size: 1.05rem;
+        color: rgb(188, 188, 247);
+      }
+      .left {
+        color: white;
+        font-size: 1.5rem;
+      }
+      .firstSection {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 120px 0;
+      }
+      .firstSection > div {
+        width: 30%;
+      }
+      .rightSection img {
+        width: 100%;
+      }
+      .leftSection {
+        font-size: 2.5rem;
+      }
+      .leftSection .buttons{
+        padding: 50px 0;
+      }
+      .leftSection .btn{
+        background: rgb(0, 0, 0);
+        font-size: 25px;
+        color: white;
+        border: 2px solid white;
+        border-radius: 7px;
+        cursor: pointer;
+        padding: 10px 7px;
+      }
+      .name {
+        color: rgb(73, 70, 70);
+      }
+      #element {
+        color: rgb(0, 0, 0);
+      }
+      .gray-txt {
+        color: gray;
+      }
+
+      .lastsection {
+        max-width: 80vw;
+        margin: auto;
+        height: 80vh;
+      }
+      .lastsection h1 {
+        font-size: 1.7rem;
+      }
+      .lastsection .box {
+        background: white;
+        width: 71vw;
+        height: 2px;
+        margin: 56px 0;
+        display: flex;
+      }
+      .lastsection .vertical {
+        height: 93px;
+        width: 1px;
+        background-color: white;
+        margin: 0 100px;
+      }
+
+      .image-top {
+        width: 30px;
+        position: relative;
+        top: -35px;
+        left: -15px;
+      }
+      main hr {
+        border: 0;
+        background: rgb(0, 0, 0);
+        height: 1.4px;
+        margin: 30px 80px;
+      }
+      .vertical-title {
+        position: relative;
+        top: 63px;
+        width: 150px;
+      }
+      .vertical-desc{
+        position: relative;
+        top: 70px;
+        width: 150px;
+        font-size: 14px;
+        color: gray;
+      }
+      footer{
+        background-color: rgb(0, 0, 0);
+      }
+      .footer{
+        display: flex;
+        padding: 23px 122px;
+        justify-content: space-evenly;
+      }
+      .footer .footer-first{
+        color: white;
+      }
+      .footer ul{
+        list-style: none;
+        color: white;
+      }
+      .footer > div{
+        width: 223px;
+      }
+      footer .footer-rights{
+        color: gray;
+        text-align: center;
+        padding: 25px 0;
+      }
+      .footer .footer-third a{
+        text-decoration: none;
+        color: white;
+      }
+      .footer .footer-second a{
+        text-decoration: none;
+        color: white;
+      }
+      .aboutsection{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 120px 120px;
+      }
+      .aboutleftsection h1{
+        font-size: 2.9rem;
+        color: rgb(0, 0, 0);
+        margin: 15px 100px;
+      }
+      .aboutsection .about-desc{
+        position: relative;
+        width: 100%;
+        color: gray;
+        text-align: center;
+        margin: 20px 5px;
+      }
+       .resumesection img{
+        width: 50%;
+        position: relative;
+        left: 18vw;
+      }
+      .project h1{
+        display: flex;
+        font-size: 2.9rem;
+        color: rgb(0, 0, 0);
+        justify-content: center;
+      }
+      .carousel-item img{
+        width: 20vw;
+        position: relative;
+        left: 23vw;
+        margin: 10vw 17vw;
+      }
+      .carousel-inner p, h5{
+        color: black;
+      }
+      .tech h1{
+        display: flex;
+        font-size: 2rem;
+        color: rgb(0, 0, 0);
+        justify-content: center;
+      }
+      .slider{
+        display: flex;
+        width: 100%;
+        height: 100%;
+      }
+      .slider img{
+        width: 9vw;
+        margin: 10px 100px;
+      }
+      .marq{
+        overflow: hidden;
+        transition: all .1s ease;
+      }
+      .form-section{
+        width: 50%;
+        display: flex;
+        margin: 7vw 33vw;
+      }
+      .form-section .btn{
+        border: 2px solid white;
+        color: white;
+        background: #000000;
+      }
+      .contact-heading h1{
+        font-size: 3.5rem;
+        display: flex;
+        position: relative;
+        left: -15vw;
+        top: 8vw;
+        color: rgb(0, 0, 0);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="left">Aman's Portfolio</div>
+        <div class="right">
+          <ul>
+            <li><a href="#abt">About</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#projs">Projects</a></li>
+            <li><a href="#contact">Contact Me</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="firstSection">
+        <div class="leftSection">
+          Hi, my name is <span class="name">Aman</span><br />
+          <div>and I'm a passionate</div>
+          <span id="element"></span>
+          <div class="buttons">
+            <a href="NEW_RESUME.pdf" download="resume"><button class="btn">Download Resume</button></a>
+            <a href="https://github.com/Aman-Rautela"><button class="btn">Visite Github</button></a>
+          </div>
+        </div>
+        <div class="rightSection">
+          <img src="bg1.png" />
+        </div>
+      </div>
+      <hr>
+      <div class="aboutsection" id="abt">
+        <div class="aboutleftsection">
+          <h1>
+            ABOUT ME
+          </h1>
+          <div class="about-desc">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus commodi fugiat, explicabo non praesentium, eius, ullam quos recusandae repudiandae maxime odio dolorum quidem dolores. Tempora quidem vel natus laudantium enim!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis saepe nostrum dolorum praesentium dolor fugit impedit totam iusto, labore eum.
+          </div>
+        </div>
+        <div class="resumesection">
+          <img src="bg.png" alt="resume-pic">
+        </div>
+      </div>
+      <hr>
+      <div class="project" id="projs">
+        <h1>My Top-3 Projects</h1>
+      </div>
+      <div id="carouselExampleCaptions" class="carousel slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="pro1.png"  alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Project 1</h5>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit rerum velit, laudantium cumque ab beatae exercitationem est quae adipisci fugiat.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="pro2.png"  alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Project 2</h5>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat porro repellat libero quod! Consectetur illo quos magni facere ipsam officia?</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="pro3.png"  alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Project 3</h5>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi ut ducimus numquam aspernatur sed commodi recusandae facilis aperiam magni omnis!</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <hr>
+      <div class="tech" id="services">
+        <h1>MY TECH STACK</h1>
+        <div class="slider">
+          <marquee class="marq" >
+            <img src="java.png" alt="java">
+            <img src="html.png" alt="html">
+            <img src="css.png" alt="css">
+            <img src="js.png" alt="js">
+            <img src="react.png" alt="react.js">
+          </marquee>
+        </div>
+      </div>
+      <hr />
+      <section class="lastsection">
+        <span class="gray-txt">What I hav done so far</span>
+        <h1>WORK EXPERIENCE</h1>
+        <div class="box">
+          <div class="vertical">
+            <img class="image-top" src="html.png" alt="html logo" />
+            <div class="vertical-title">HTML Developer (2019 - 2020)</div>
+            <div class="vertical-desc">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
+              quibusdam officiis ad odio quasi similique hic ducimus. Quod,
+              repellendus enim.
+            </div>
+          </div>
+          <div class="vertical">
+            <img class="image-top" src="android.png" alt="html logo" />
+            <div class="vertical-title">Android Developer (2019 - 2020)</div>
+            <div class="vertical-desc">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
+              quibusdam officiis ad odio quasi similique hic ducimus. Quod,
+              repellendus enim.
+            </div>
+          </div>
+          <div class="vertical">
+            <img class="image-top" src="react.png" alt="html logo" />
+            <div class="vertical-title">React Developer (2019 - 2020)</div>
+            <div class="vertical-desc">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
+              quibusdam officiis ad odio quasi similique hic ducimus. Quod,
+              repellendus enim.
+            </div>
+          </div>
+          <div class="vertical">
+            <img class="image-top" src="java.png" alt="html logo" />
+            <div class="vertical-title">Java Developer (2019 - 2020)</div>
+            <div class="vertical-desc">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
+              quibusdam officiis ad odio quasi similique hic ducimus. Quod,
+              repellendus enim.
+            </div>
+          </div>
+          <div class="vertical">
+            <img class="image-top" src="2d.png" alt="html logo" />
+            <div class="vertical-title">2-D Animator (2019 - 2020)</div>
+            <div class="vertical-desc">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
+              quibusdam officiis ad odio quasi similique hic ducimus. Quod,
+              repellendus enim.
+            </div>
+          </div>
+        </div>
+      </section>
+      <hr>
+      <div class="form-section" id="contact">
+        <div class="contact-heading">
+          <h1>Contact</h1>
+        </div>
+        <form class="row g-3">
+          <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">First</label>
+            <input type="text" class="form-control" id="Firstname" placeholder="Firstname">
+          </div>
+          <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Last</label>
+            <input type="text" class="form-control" id="Lastname" placeholder="Lastname">
+          </div>
+          <div class="col-12">
+            <label for="inputAddress" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="abc@xyz.com">
+          </div>
+          <div class="col-12">
+            <label for="inputAddress2" class="form-label">TEXT / OPINION</label>
+            <textarea class="form-control" id="opinion" placeholder="Hi,...."></textarea>
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn">Send</button>
+          </div>
+        </form>
+        <hr>
+      </div>
+    </main>
+    <footer>
+        <div class="footer">
+            <div class="footer-first">Aman's Developer Portfolio</div>
+            <div class="footer-second">
+              <ul>
+                <a href="/"><li>Home</li></a>
+                <a href="#projs"><li>Projects</li></a>
+                <a href="#abt"><li>About</li></a>
+                <a href="#contact"><li>Contact</li></a>
+              </ul>
+            </div>
+            <div class="footer-third">
+              <ul>
+                <li><a href="" class="fa fa-github"></a></li>
+                <li><a href="" class="fa fa-linkedin"></a></li>
+                <li><a href="" class="fa fa-telegram"></a></li>
+                <li><a href="" class="fa fa-instagram"></a></li>
+              </ul>
+            </div>
+            <div class="footer-forth">
+              <ul>
+                <li>XYZ-Near ABC , Dehradun</li>
+                <li>+91 98*******</li>
+                <li>Am*****@gmail.com</li>
+              </ul>
+            </div>
+        </div>
+        <div class="footer-rights">
+          &#169 Amansportfolio.com | All rights resserver
+        </div>
+    </footer>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+      var typed = new Typed("#element", {
+        strings: [
+          "<strong><i>2-D</i></strong> Animator",
+          "&amp; <strong><i>FrontEnd</i></strong> Developer",
+        ],
+        typeSpeed: 50,
+      });
+    </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+  </body>
+</html>
